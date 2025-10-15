@@ -4,7 +4,7 @@ class controller:
 	def __init__(self, KP=0.15, KD=0.6):
 		self.KP = KP
 		self.KD = KD
-		self.prev_error = 0.0
+		self.prev_error = 0.0 # Initialize previous error to zero because assume no error before starting
 
 	def reset(self):
 		self.prev_error = 0.0
@@ -15,3 +15,4 @@ class controller:
 		action = self.KP * error + self.KD * derivative
 		self.prev_error = error
 		return action
+	
